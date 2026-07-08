@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cache Markets — Self-serve markets for Utah workplaces</title>
+<meta name="description" content="Cache Markets designs, installs, stocks, and maintains premium self-serve micro-markets in Utah workplaces — at no cost to you. Fresh food, snacks, and coffee, 24/7. Serving Provo to North Salt Lake." />
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#163829;        /* primary deep evergreen */
+    --pine-2:#1E4A37;      /* lighter card green on dark */
+    --pine-3:#10281E;      /* darkest */
+    --honey:#E0972E;       /* warm amber accent */
+    --honey-deep:#C67C18;  /* hover */
+    --cream:#FBF8F1;       /* warm off-white bg */
+    --oat:#F0E9DA;         /* secondary light fill */
+    --sage:#D7E0CF;        /* soft green fill */
+    --ink:#19241E;         /* text on light */
+    --ink-soft:#525C53;    /* muted text on light */
+    --cream-soft:#D8E0D2;  /* muted text on dark */
+    --line-dark:rgba(255,255,255,.14);
+    --line-light:rgba(25,36,30,.12);
+    --display:"Fraunces",Georgia,"Times New Roman",serif;
+    --body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--body);font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--body);font-weight:600;font-size:.97rem;padding:.85em 1.5em;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,border-color .18s ease;white-space:nowrap}
+  .btn-primary{background:var(--honey);color:#241a06;box-shadow:0 6px 22px -10px rgba(224,151,46,.9)}
+  .btn-primary:hover{background:var(--honey-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:var(--line-dark)}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.5);transform:translateY(-2px)}
+  .btn-dark{background:var(--pine);color:var(--cream)}
+  .btn-dark:hover{background:var(--pine-3);transform:translateY(-2px)}
+  :focus-visible{outline:3px solid var(--honey);outline-offset:3px;border-radius:4px}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(16,40,30,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:.62em;color:var(--cream);font-family:var(--display);font-weight:600;font-size:1.28rem;letter-spacing:-.02em}
+  .brand .mark{width:30px;height:30px;flex:none}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{color:var(--cream-soft);font-size:.93rem;font-weight:500;transition:color .15s}
+  .nav-links a:hover{color:var(--cream)}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--cream)}
+  .nav-toggle svg{width:26px;height:26px}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--pine);color:var(--cream);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 480px at 88% -8%,rgba(224,151,46,.16),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;padding:84px 0 92px;position:relative}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);margin:.34em 0 .5em}
+  .hero h1 .accent{color:var(--honey);font-style:italic}
+  .hero p.lede{font-size:1.16rem;color:var(--cream-soft);max-width:33ch;margin-bottom:2em}
+  .hero .eyebrow{color:var(--honey)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:2.3em}
+  .trustline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:.83rem;color:var(--cream-soft);font-weight:500}
+  .trustline .dot{width:5px;height:5px;border-radius:50%;background:var(--honey)}
+
+  /* shelf signature graphic */
+  .shelf{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--pine-2),#1a4030);border:1px solid var(--line-dark);border-radius:18px;padding:22px 22px 10px;box-shadow:0 40px 80px -50px rgba(0,0,0,.8)}
+  .shelf-photo{position:absolute;inset:0;border-radius:inherit;background:url('images/hero.jpg') center/cover no-repeat}
+  .shelf-cap{display:flex;align-items:center;justify-content:space-between;padding:0 2px 16px;color:var(--cream-soft);font-size:.78rem;font-weight:600;letter-spacing:.04em}
+  .shelf-cap .live{display:inline-flex;align-items:center;gap:7px}
+  .shelf-cap .pulse{width:8px;height:8px;border-radius:50%;background:#7ED39B;box-shadow:0 0 0 0 rgba(126,211,155,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(126,211,155,.5)}70%{box-shadow:0 0 0 9px rgba(126,211,155,0)}100%{box-shadow:0 0 0 0 rgba(126,211,155,0)}}
+  .shelf-row{padding:13px 0;border-bottom:1px solid var(--line-dark)}
+  .shelf-row:last-child{border-bottom:0}
+  .shelf-row .rl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-soft);font-weight:600;margin-bottom:9px}
+  .tiles{display:flex;gap:9px}
+  .tile{min-height:58px;border-radius:9px;flex:1;background:var(--cream);border:1px solid rgba(25,36,30,.06);display:flex;align-items:center;justify-content:center;padding:7px;opacity:0;transform:translateY(10px)}
+  html.js .tile{animation:rise .55s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .tile svg{width:100%;height:auto;max-width:42px;max-height:42px;display:block}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  .section{padding:96px 0}
+  .section-head{max-width:60ch;margin-bottom:54px}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .section-head .eyebrow{color:var(--honey-deep);display:block;margin-bottom:14px}
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.85rem)}
+  .section-head p{color:var(--ink-soft);font-size:1.1rem;margin-top:.7em}
+  .lead-light .section-head p{color:var(--cream-soft)}
+
+  /* reveal */
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html.js .reveal{opacity:1!important;transform:none!important;transition:none}
+    html.js .tile{animation:none;opacity:1;transform:none}
+    *{scroll-behavior:auto!important}
+  }
+
+  /* ---------- STEPS ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:step}
+  .step{position:relative;padding-top:30px;border-top:2px solid var(--line-light)}
+  .step .num{font-family:var(--display);font-size:1.05rem;color:var(--honey-deep);font-weight:600;position:absolute;top:-1px;left:0;transform:translateY(-50%);background:var(--cream);padding-right:12px}
+  .step h3{font-size:1.22rem;margin:.2em 0 .5em}
+  .step p{font-size:.97rem;color:var(--ink-soft)}
+  .step .ic{width:30px;height:30px;color:var(--pine);margin-bottom:16px}
+
+  /* ---------- WHY (cards on dark) ---------- */
+  .why{background:var(--pine);color:var(--cream)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--pine-2);border:1px solid var(--line-dark);border-radius:16px;padding:30px 26px;transition:transform .2s ease,border-color .2s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(224,151,46,.5)}
+  .card .ic{width:32px;height:32px;color:var(--honey);margin-bottom:18px}
+  .card h3{font-size:1.2rem;margin-bottom:.45em}
+  .card p{color:var(--cream-soft);font-size:.96rem}
+
+  /* ---------- WHO (segments) ---------- */
+  .seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .seg{display:flex;gap:20px;align-items:flex-start;padding:28px;border:1px solid var(--line-light);border-radius:16px;background:#fff;transition:transform .2s ease,box-shadow .2s ease}
+  .seg:hover{transform:translateY(-3px);box-shadow:0 24px 50px -34px rgba(22,56,41,.5)}
+  .seg .ic{width:40px;height:40px;flex:none;color:var(--pine);background:var(--sage);border-radius:11px;padding:8px}
+  .seg h3{font-size:1.16rem;margin-bottom:.3em}
+  .seg p{font-size:.95rem;color:var(--ink-soft)}
+  .who-note{margin-top:32px;font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--pine);text-align:center}
+
+  /* ---------- PROMISE band ---------- */
+  .promise{background:var(--oat)}
+  .promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+  .promise .pi .ic{width:28px;height:28px;color:var(--honey-deep);margin-bottom:14px}
+  .promise .pi h3{font-size:1.08rem;margin-bottom:.35em}
+  .promise .pi p{font-size:.93rem;color:var(--ink-soft)}
+
+  /* ---------- ABOUT ---------- */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .about-photo{aspect-ratio:4/3;border-radius:18px;background-color:#cdd9c4;background-image:
+     url('images/about.jpg'),
+     linear-gradient(135deg,rgba(224,151,46,.12),transparent),
+     repeating-linear-gradient(45deg,var(--sage) 0 18px,#cdd9c4 18px 36px);
+     background-size:cover,cover,auto;background-position:center,center,center;background-repeat:no-repeat,no-repeat,repeat;
+     border:1px solid var(--line-light);display:flex;align-items:flex-end;padding:18px}
+  .about-photo span{font-size:.78rem;color:var(--pine);background:rgba(251,248,241,.85);padding:6px 12px;border-radius:8px;font-weight:600}
+  .about h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:.5em}
+  .about p{color:var(--ink-soft);margin-bottom:1em}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--cream)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+  .gtile{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid var(--line-light);background-color:#cdd9c4;background-image:linear-gradient(180deg,rgba(16,40,30,.10),rgba(16,40,30,.62)),var(--photo,none),repeating-linear-gradient(45deg,var(--sage) 0 16px,#cdd9c4 16px 32px);background-size:cover,cover,auto;background-position:center,center,center;background-repeat:no-repeat,no-repeat,repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;transition:transform .25s ease}
+  .gtile:hover{transform:translateY(-5px)}
+  .gtile .gic{width:30px;height:30px;color:#fff;margin-bottom:auto;opacity:.95}
+  .gtile .glabel{color:#fff;font-weight:700;font-size:1.02rem;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+  .gtile .gsub{color:rgba(255,255,255,.9);font-size:.82rem;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--pine);color:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px}
+  .contact h2{font-size:clamp(2rem,3.4vw,2.7rem);margin-bottom:.4em}
+  .contact .sub{color:var(--cream-soft);margin-bottom:1.6em;max-width:34ch}
+  .contact-direct{margin-top:30px;display:flex;flex-direction:column;gap:14px;font-size:.97rem}
+  .contact-direct a,.contact-direct span{display:flex;align-items:center;gap:12px;color:var(--cream-soft)}
+  .contact-direct .ic{width:20px;height:20px;color:var(--honey);flex:none}
+  .contact-direct a:hover{color:var(--cream)}
+  form{background:var(--cream);border-radius:18px;padding:32px;color:var(--ink)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px;display:flex;flex-direction:column}
+  .field.full{grid-column:1/-1}
+  label{font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+  label .req{color:var(--honey-deep)}
+  input,select,textarea{font-family:var(--body);font-size:.97rem;padding:.72em .85em;border:1.5px solid var(--line-light);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .15s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--honey)}
+  textarea{resize:vertical;min-height:84px}
+  .form-submit{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.78rem;color:var(--ink-soft);margin-top:14px;text-align:center}
+  .form-ok{display:none;background:var(--sage);border-radius:12px;padding:24px;text-align:center}
+  .form-ok h3{color:var(--pine);font-size:1.3rem;margin-bottom:.3em}
+  .form-ok p{color:var(--ink-soft);font-size:.95rem}
+  .form-ok.show{display:block}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--pine-3);color:var(--cream-soft);padding:54px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid var(--line-dark)}
+  .foot-brand{max-width:30ch}
+  .foot-brand .brand{margin-bottom:14px}
+  .foot-brand p{font-size:.9rem}
+  .foot-cols{display:flex;gap:60px;flex-wrap:wrap}
+  .foot-col h4{color:var(--cream);font-family:var(--body);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;font-size:.92rem;margin-bottom:9px;color:var(--cream-soft)}
+  .foot-col a:hover{color:var(--cream)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:.82rem}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:var(--pine);border-bottom:1px solid var(--line-dark);padding:8px 0}
+    .nav-links.open a{padding:13px 28px;width:100%}
+    .nav-toggle{display:inline-flex}
+    .nav-cta .btn-primary{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:40px;padding:60px 0 70px}
+    .hero p.lede{max-width:46ch}
+    .steps{grid-template-columns:1fr 1fr;gap:30px}
+    .cards{grid-template-columns:1fr}
+    .seg-grid{grid-template-columns:1fr}
+    .promise-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .about{grid-template-columns:1fr;gap:28px}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media (max-width:520px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .section{padding:68px 0}
+    .steps,.promise-grid,.frow{grid-template-columns:1fr}
+    .hero-actions{flex-direction:column;align-items:stretch}
+    .hero-actions .btn{justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Cache Markets home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="8" stroke="#E0972E" stroke-width="2"/>
+        <path d="M9 12.5C9 11 10 10 11.5 10h9c1.5 0 2.5 1 2.5 2.5V22a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-9.5Z" stroke="#FBF8F1" stroke-width="1.8"/>
+        <path d="M9 14.5h14M14 10v3M19 10v3" stroke="#FBF8F1" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Cache Markets
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#why">Why Cache</a>
+      <a href="#who">Who it's for</a>
+      <a href="#area">Service area</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Request an assessment</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Self-serve markets for Utah workplaces</span>
+      <h1>A <span class="accent">cache</span> of fresh food and drinks, steps from your team's desk.</h1>
+      <p class="lede">We design, install, stock, and maintain a premium self-serve market in your break room — at no cost to you. Your team gets real food, snacks, and coffee around the clock.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Request a free site assessment</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="trustline">
+        <span>Locally owned</span><span class="dot"></span>
+        <span>Licensed &amp; insured</span><span class="dot"></span>
+        <span>Provo to North Salt Lake</span>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: stocked-shelf graphic -->
+    <div class="shelf" aria-hidden="true">
+      <div class="shelf-cap">
+        <span>YOUR BREAK ROOM</span>
+        <span class="live"><span class="pulse"></span>Stocked &amp; live</span>
+      </div>
+      <div class="shelf-row">
+        <div class="rl">Fresh &amp; meals</div>
+        <div class="tiles">
+          <div class="tile" style="animation-delay:.05s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="16" cy="17" r="4.5" fill="#5aa84f"/><circle cx="22" cy="15" r="5" fill="#4a9440"/><circle cx="27" cy="18" r="4" fill="#6cbf5f"/><circle cx="20" cy="19" r="2.8" fill="#e2483a"/><path d="M8 20 a12 9 0 0 0 24 0" fill="#fff"/><path d="M8 20 h24"/></svg></div>
+          <div class="tile" style="animation-delay:.12s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M20 14 C16 11 11 14 12 20 C12.6 25 16 28 20 26 C24 28 27.4 25 28 20 C29 14 24 11 20 14Z" fill="#e2483a"/><path d="M20 14 V10"/><path d="M20 12 q4 -3 6 0 q-4 3 -6 0Z" fill="#5aa84f"/></svg></div>
+          <div class="tile" style="animation-delay:.19s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="9" y="14" width="22" height="4.5" rx="2.2" fill="#e8b866"/><path d="M9 19 q11 3 22 0 v2 q-11 3 -22 0Z" fill="#7bc17b"/><rect x="9" y="22" width="22" height="3" fill="#f4c95d"/><rect x="9" y="24.5" width="22" height="4.5" rx="2.2" fill="#e8b866"/></svg></div>
+          <div class="tile" style="animation-delay:.26s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M15 14 q-2 -2.5 0 -5 q2 -2.5 0 -5" stroke-width="1.3"/><path d="M20 14 q-2 -2.5 0 -5 q2 -2.5 0 -5" stroke-width="1.3"/><path d="M25 14 q-2 -2.5 0 -5 q2 -2.5 0 -5" stroke-width="1.3"/><rect x="8" y="18" width="23" height="10" rx="5" fill="#ecca86"/><path d="M14 18.5 l-2.2 9 M19 18.5 l-2.2 9" stroke="#c99a4e" stroke-width="1.1"/><path d="M8.5 23 q2.5 -4.5 5.5 -2.8 q1 3 -1 5.8 q-3 1.8 -4.5 -3Z" fill="#e2b871"/><ellipse cx="29" cy="23" rx="2.4" ry="4" fill="#f5efd8"/><circle cx="29" cy="21.6" r="0.9" fill="#e2483a" stroke="none"/><circle cx="28.8" cy="24.4" r="0.9" fill="#6cbf5f" stroke="none"/></svg></div>
+        </div>
+      </div>
+      <div class="shelf-row">
+        <div class="rl">Cold drinks</div>
+        <div class="tiles">
+          <div class="tile" style="animation-delay:.18s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="13" y="12" width="14" height="20" rx="3" fill="#e2483a"/><ellipse cx="20" cy="12" rx="7" ry="2" fill="#cfd3d6"/><rect x="14.5" y="18" width="11" height="7" rx="1" fill="#fff"/><path d="M20 10.5 v1.5"/></svg></div>
+          <div class="tile" style="animation-delay:.25s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="15" y="14" width="10" height="18" rx="4.5" fill="#bfe3f2"/><path d="M15.6 23 q4.4 2.5 8.8 0 v7 q-4.4 2 -8.8 0Z" fill="#8fd0ee"/><rect x="17" y="9" width="6" height="5" rx="1" fill="#7fb8d6"/></svg></div>
+          <div class="tile" style="animation-delay:.32s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="13" y="14" width="14" height="18" rx="1.5" fill="#f0932b"/><rect x="15.5" y="18.5" width="9" height="8" rx="1" fill="#fff"/><circle cx="20" cy="22.5" r="2.6" fill="#f6b352"/><path d="M24 14 l3 -6" stroke-width="2"/></svg></div>
+          <div class="tile" style="animation-delay:.39s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="15" y="9" width="10" height="24" rx="2.5" fill="#2c2c2c"/><ellipse cx="20" cy="9" rx="5" ry="1.6" fill="#cfd3d6"/><path d="M21.5 13 l-4.5 8 l3 0 l-2 7 l5.5 -9 l-3 0 l3 -5Z" fill="#8ee04a"/><path d="M20 7.6 v1.4"/></svg></div>
+        </div>
+      </div>
+      <div class="shelf-row">
+        <div class="rl">Snacks</div>
+        <div class="tiles">
+          <div class="tile" style="animation-delay:.31s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M13 14 q7 -3 14 0 l0 14 q-7 3 -14 0Z" fill="#f4c430"/><path d="M13 14 q7 -3 14 0"/><ellipse cx="20" cy="21" rx="3.8" ry="4.4" fill="#e2483a"/><path d="M18 21 l1.5 1.5 l2.5 -3"/></svg></div>
+          <div class="tile" style="animation-delay:.38s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M11 16 l-2.5 -1.5 l0 3Z" fill="#c98a3a"/><path d="M29 16 l2.5 -1.5 l0 3Z" fill="#c98a3a"/><rect x="11" y="16" width="18" height="8" rx="1.5" fill="#c98a3a"/><rect x="14.5" y="18.5" width="11" height="3" rx="1" fill="#f2e2c4"/></svg></div>
+          <div class="tile" style="animation-delay:.45s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="20" cy="20" r="9" fill="#d9a05a"/><circle cx="17" cy="18" r="1.5" fill="#5a3820"/><circle cx="23.5" cy="17.5" r="1.5" fill="#5a3820"/><circle cx="21.5" cy="23" r="1.5" fill="#5a3820"/><circle cx="16.5" cy="22.5" r="1.3" fill="#5a3820"/><circle cx="24" cy="22.5" r="1.2" fill="#5a3820"/></svg></div>
+          <div class="tile" style="animation-delay:.52s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M13.5 19 l13 0 l-1.4 13 l-10.2 0Z" fill="#fff"/><path d="M16 19 l-0.7 13 M19.5 19 l0 13 M23 19 l0.5 13" stroke="#e2483a" stroke-width="1.5"/><circle cx="15.5" cy="18" r="2.3" fill="#f7e9b0"/><circle cx="20" cy="16.3" r="2.6" fill="#f9edbf"/><circle cx="24" cy="17.6" r="2.3" fill="#f7e9b0"/><circle cx="18" cy="17" r="1.9" fill="#f9edbf"/></svg></div>
+        </div>
+      </div>
+      <div class="shelf-row">
+        <div class="rl">Coffee bar</div>
+        <div class="tiles">
+          <div class="tile" style="animation-delay:.44s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 17 l12 0 l-1.5 15 l-9 0Z" fill="#fff"/><rect x="15.5" y="22" width="9" height="4.5" fill="#c98a3a"/><rect x="12.5" y="13.5" width="15" height="3.8" rx="1.2" fill="#8a5a2b"/><path d="M18 13.5 l0 -2.5 l4 0 l0 2.5" fill="#8a5a2b"/></svg></div>
+          <div class="tile" style="animation-delay:.51s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M13 18 l12 0 l-1 10 q-0.5 3 -5 3 q-4.5 0 -5 -3Z" fill="#fff"/><path d="M25 20 q5 0.5 4.5 4.5 q-0.5 3.5 -5 3.5"/><ellipse cx="19" cy="18" rx="6" ry="1.6" fill="#6b4423"/><path d="M16 15 q-1.2 -2 0.6 -3.4 M20.5 15 q-1.2 -2 0.6 -3.4" stroke="#b8b2a6" stroke-width="1.3"/></svg></div>
+          <div class="tile" style="animation-delay:.58s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 16 l12 0 l-1.2 16 l-9.6 0Z" fill="#c98a3a"/><rect x="16" y="18.5" width="3" height="3" rx="0.6" fill="#fff" fill-opacity=".55"/><rect x="20" y="21" width="3" height="3" rx="0.6" fill="#fff" fill-opacity=".55"/><rect x="17.5" y="23.5" width="3" height="3" rx="0.6" fill="#fff" fill-opacity=".55"/><path d="M23 16 l3 -7" stroke-width="2"/></svg></div>
+          <div class="tile" style="animation-delay:.65s"><svg viewBox="0 0 40 40" fill="none" stroke="#33302b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="20" cy="29" rx="9" ry="2.2" fill="#e8e3d8"/><path d="M15 17 l9 0 l-1 7 q-0.4 2 -3.5 2 q-3.1 0 -3.5 -2Z" fill="#fff"/><path d="M24 18.5 q3 0.3 2.6 2.6 q-0.4 2 -3 2"/><ellipse cx="19.3" cy="17" rx="4.4" ry="1.2" fill="#6b4423"/></svg></div>
+        </div>
+      </div>
+      <!-- Optional: drop images/hero.jpg into your repo and it replaces this whole graphic with a real photo. Leave it out and the graphic stays. -->
+      <div class="shelf-photo" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Four steps, and the hard part is ours.</h2>
+      <p>From first visit to fully stocked, you don't lift a finger or spend a dollar. Here's the whole process.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="num">01</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-4.3-4.3M11 18a7 7 0 100-14 7 7 0 000 14z"/></svg>
+        <h3>Free site assessment</h3>
+        <p>We visit, look at your space and headcount, and design a market that fits. No cost, no obligation.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>
+        <h3>We design &amp; install</h3>
+        <p>Shelving, coolers, and tap-to-pay checkout, built out and branded for your space — entirely on us.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-1.5 9H4.5L3 6zM3 6L2 2H1m6 18a1 1 0 100 2 1 1 0 000-2zm10 0a1 1 0 100 2 1 1 0 000-2z"/></svg>
+        <h3>We stock &amp; maintain</h3>
+        <p>We keep it full with a mix tuned to your team, handle restocking and service, and monitor it remotely.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <h3>Your team grabs &amp; goes</h3>
+        <p>Tap a card, badge, or phone and go. Open 24/7, ready for every shift — days, nights, and weekends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY / SHOWCASE ============ -->
+<!-- Photos are pre-wired to the /images folder. Just add images/showcase-1.jpg through showcase-4.jpg (and images/about.jpg for the About section). No code editing needed - they appear automatically, and the styled placeholder shows until then. -->
+<section class="section gallery">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">See it</span>
+      <h2>A market your team will actually want to use.</h2>
+      <p>Open shelving, glass-front coolers, fresh food, and tap-to-pay checkout &mdash; a clean, modern setup tailored to your space.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gtile" style="--photo:url('images/showcase-1.jpg')">
+        <svg class="gic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <span class="glabel">Open shelving</span>
+        <span class="gsub">Snacks, fresh meals &amp; local brands</span>
+      </div>
+      <div class="gtile" style="--photo:url('images/showcase-2.jpg')">
+        <svg class="gic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 12h14M10 6v2M10 16v2"/></svg>
+        <span class="glabel">Glass-front coolers</span>
+        <span class="gsub">Cold drinks, salads &amp; protein boxes</span>
+      </div>
+      <div class="gtile" style="--photo:url('images/showcase-3.jpg')">
+        <svg class="gic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8M12 16v5"/></svg>
+        <span class="glabel">Tap-to-pay kiosk</span>
+        <span class="gsub">Card, phone, or badge &mdash; grab &amp; go</span>
+      </div>
+      <div class="gtile" style="--photo:url('images/showcase-4.jpg')">
+        <svg class="gic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5V8zM17 9h2a2 2 0 010 4h-2M6 2v2M10 2v2M14 2v2"/></svg>
+        <span class="glabel">Coffee bar</span>
+        <span class="gsub">Fresh, barista-style options</span>
+      </div>
+    </div>
+    <p class="form-note" style="text-align:center;margin-top:18px">Reference layout &mdash; we tailor the size and product mix to your space.</p>
+  </div>
+</section>
+
+<!-- ============ WHY CACHE ============ -->
+<section class="section why lead-light" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--honey)">Why employers choose Cache</span>
+      <h2>A perk your team feels daily — and you never have to run.</h2>
+    </div>
+    <div class="cards reveal">
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <h3>No cost, no admin</h3>
+        <p>Equipment, installation, stocking, and service are on us. There's nothing for your facilities team to manage or budget for.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8.5c0 5-8 10.5-8 10.5S4 13.5 4 8.5a4 4 0 017.4-2.1A4 4 0 0120 8.5z"/></svg>
+        <h3>A perk that retains</h3>
+        <p>On-site food is a low-effort morale and retention win — the kind of everyday benefit people actually notice.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2M12 3a9 9 0 109 9 9 9 0 00-9-9z"/></svg>
+        <h3>Shifts stay on-site</h3>
+        <p>No long drives for lunch. People stay close, breaks stay short, and your floor keeps moving.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h4M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/></svg>
+        <h3>Cashless &amp; secure</h3>
+        <p>Tap-to-pay checkout with remote monitoring and loss prevention built in from day one.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6a5 5 0 0010 0V3M5 21h14M12 14v7"/></svg>
+        <h3>Fresh, not just snacks</h3>
+        <p>Real meals, fruit, healthy options, drinks, and quality coffee — not a wall of candy and stale chips.</p>
+      </div>
+      <div class="card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+        <h3>Tuned to your team</h3>
+        <p>We adjust the product mix to what your people actually buy, location by location, and keep refining it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="section" id="who">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who it's for</span>
+      <h2>Built for the places people spend their days &mdash; and nights.</h2>
+    </div>
+    <div class="seg-grid reveal">
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6M3 13h18"/></svg>
+        <div><h3>Warehouses &amp; distribution</h3><p>High-volume sites where the nearest store is a real drive away.</p></div>
+      </div>
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l5 3V11l5 3V8l5 3v10H3zM7 21v-3M12 21v-3M17 21v-3"/></svg>
+        <div><h3>Manufacturing &amp; production</h3><p>Shift teams with short breaks and few options within walking distance.</p></div>
+      </div>
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-2a4 4 0 014-4h0M16 12a4 4 0 014 4v2M9 7a3 3 0 116 0 3 3 0 01-6 0zM2 22h20"/></svg>
+        <div><h3>Call centers &amp; operations</h3><p>Large floors that stay busy across long and overnight shifts.</p></div>
+      </div>
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14" stroke-width="2"/><rect x="3" y="3" width="18" height="18" rx="3" stroke-width="1.4"/></svg>
+        <div><h3>Healthcare &amp; 24/7 facilities</h3><p>Round-the-clock staff who need real food at every hour of the day.</p></div>
+      </div>
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>
+        <div><h3>Student housing</h3><p>Hundreds of residents and busy amenity floors &mdash; grab-and-go without a late-night drive.</p></div>
+      </div>
+      <div class="seg">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V5a2 2 0 012-2h6a2 2 0 012 2v16M13 21V9h6a2 2 0 012 2v10M6 7h2M6 11h2M6 15h2M16 13h2M16 17h2"/></svg>
+        <div><h3>Apartment communities</h3><p>A standout resident amenity &mdash; a 24/7 mini-market right in the clubhouse or lobby.</p></div>
+      </div>
+    </div>
+    <p class="who-note reveal">From a warehouse floor to a student-housing lobby, Cache keeps people stocked around the clock.</p>
+  </div>
+</section>
+
+<!-- ============ PROMISE / SERVICE AREA ============ -->
+<section class="section promise" id="area">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Cache promise</span>
+      <h2>Local, accountable, and easy to say yes to.</h2>
+    </div>
+    <div class="promise-grid reveal">
+      <div class="pi">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <h3>Utah-owned &amp; operated</h3>
+        <p>You work directly with a local team, not a national hotline.</p>
+      </div>
+      <div class="pi">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Licensed &amp; insured</h3>
+        <p>Fully covered and food-safety compliant, so HR and facilities can sign with confidence.</p>
+      </div>
+      <div class="pi">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg>
+        <h3>Responsive service</h3>
+        <p>Local routes mean fast restocks and quick fixes when something needs attention.</p>
+      </div>
+      <div class="pi">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg>
+        <h3>Serving the I-15 corridor</h3>
+        <p>From Provo to North Salt Lake — across Salt Lake and Utah County.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section">
+  <div class="wrap about reveal">
+    <!-- Replace this placeholder block with a real photo of you / an installed market -->
+    <div class="about-photo" aria-hidden="true"><span>Add a photo of your team or a market here</span></div>
+    <div>
+      <span class="eyebrow" style="color:var(--honey-deep);display:block;margin-bottom:14px">Why we started Cache Markets</span>
+      <h2>The best workplaces keep their people fueled.</h2>
+      <!-- EDIT this copy to your own story before launch -->
+      <p>Most break rooms still offer a tired vending machine and not much else. Cache Markets brings the convenience of a modern market — fresh food, fair prices, and tap-to-pay — to the Utah workplaces that keep the Wasatch Front running.</p>
+      <p>We're a local team that handles everything end to end, so a great on-site amenity is one less thing for you to think about. Tell us about your space and we'll show you what's possible.</p>
+      <a href="#contact" class="btn btn-dark">Start with a free assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap section">
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2>Let's see if your space is a fit.</h2>
+        <p class="sub">Tell us a bit about your site and we'll set up a free, no-obligation assessment.</p>
+        <div class="contact-direct">
+          <!-- Replace with your real address once you claim it -->
+          <a href="mailto:hello@cachemarkets.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 6l8 6 8-6"/></svg>hello@cachemarkets.com</a>
+          <!-- (801) 555-0142 is a placeholder in the reserved fictional range — swap in your real number -->
+          <a href="tel:+18015550142"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L20 13l2 5v3a1 1 0 01-1 1A17 17 0 014 4a1 1 0 011-1z"/></svg>(801) 555-0142</a>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Provo &ndash; North Salt Lake, Utah</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <form id="leadForm" novalidate>
+          <div class="frow">
+            <div class="field"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="company">Company <span class="req">*</span></label><input id="company" name="company" type="text" autocomplete="organization" required></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="role">Your role</label><input id="role" name="role" type="text" placeholder="e.g. Facilities Manager"></div>
+            <div class="field"><label for="email">Work email <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="city">Site city</label><input id="city" name="city" type="text" placeholder="e.g. West Valley City"></div>
+          </div>
+          <div class="field full">
+            <label for="headcount">People on-site <span class="req">*</span></label>
+            <select id="headcount" name="headcount" required>
+              <option value="" selected disabled>Select a range</option>
+              <option>Under 75</option>
+              <option>75–150</option>
+              <option>150–400</option>
+              <option>400+</option>
+              <option>Multiple sites</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Anything we should know?</label>
+            <textarea id="message" name="message" placeholder="Shifts, current break-room setup, timeline…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Request my free assessment</button>
+          <p class="form-note">No cost, no obligation. We typically reply within one business day.</p>
+        </form>
+        <div class="form-ok" id="formOk" role="status" aria-live="polite">
+          <h3>Thanks — your request is ready to send.</h3>
+          <p>Your email app should open with the details filled in. If it didn't, email us directly at hello@cachemarkets.com.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" stroke="#E0972E" stroke-width="2"/>
+            <path d="M9 12.5C9 11 10 10 11.5 10h9c1.5 0 2.5 1 2.5 2.5V22a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-9.5Z" stroke="#FBF8F1" stroke-width="1.8"/>
+            <path d="M9 14.5h14M14 10v3M19 10v3" stroke="#FBF8F1" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          Cache Markets
+        </a>
+        <p>Premium self-serve markets for Utah workplaces — installed, stocked, and maintained at no cost to you.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="#how">How it works</a>
+          <a href="#why">Why Cache</a>
+          <a href="#who">Who it's for</a>
+          <a href="#area">Service area</a>
+        </div>
+        <div class="foot-col">
+          <h4>Get in touch</h4>
+          <a href="mailto:hello@cachemarkets.com">hello@cachemarkets.com</a>
+          <a href="tel:+18015550142">(801) 555-0142</a>
+          <p>Provo – North Salt Lake</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Cache Markets. Licensed &amp; insured · Utah-owned.</span>
+      <span><a href="#contact">Request a site assessment →</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  var toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');
+  toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+  });
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');toggle.setAttribute('aria-expanded',false);});});
+
+  // Scroll reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+
+  // Lead form -> compose a prefilled email (swap for Formspree/Netlify Forms for a true inbox form)
+  var form=document.getElementById('leadForm'),ok=document.getElementById('formOk');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var g=function(id){return (document.getElementById(id).value||'').trim();};
+    var subject='Site assessment request — '+(g('company')||'New lead');
+    var lines=[
+      'Name: '+g('name'),
+      'Company: '+g('company'),
+      'Role: '+g('role'),
+      'Work email: '+g('email'),
+      'Phone: '+g('phone'),
+      'Site city: '+g('city'),
+      'People on-site: '+g('headcount'),
+      '',
+      'Notes:',
+      g('message')
+    ];
+    var href='mailto:hello@cachemarkets.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+    window.location.href=href;
+    form.style.display='none';
+    ok.classList.add('show');
+  });
+</script>
+</body>
+</html>
