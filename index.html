@@ -532,7 +532,9 @@
       </div>
 
       <div class="reveal">
-        <form id="leadForm" novalidate>
+        <form id="leadForm" action="https://formspree.io/f/xdarqole" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Cache Markets assessment request">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
           <div class="frow">
             <div class="field"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
             <div class="field"><label for="company">Company <span class="req">*</span></label><input id="company" name="company" type="text" autocomplete="organization" required></div>
@@ -564,8 +566,8 @@
           <p class="form-note">No cost, no obligation. We typically reply within one business day.</p>
         </form>
         <div class="form-ok" id="formOk" role="status" aria-live="polite">
-          <h3>Thanks — your request is ready to send.</h3>
-          <p>Your email app should open with the details filled in. If it didn't, email us directly at hello@cachemarkets.com.</p>
+          <h3>Thanks — we got your request.</h3>
+          <p>We'll be in touch within one business day. Prefer email? Reach us anytime at hello@cachemarkets.com.</p>
         </div>
       </div>
     </div>
@@ -630,29 +632,32 @@
     document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
   }
 
-  // Lead form -> compose a prefilled email (swap for Formspree/Netlify Forms for a true inbox form)
+  // Lead form -> submit to Formspree via AJAX (stays on page, shows the thank-you message)
   var form=document.getElementById('leadForm'),ok=document.getElementById('formOk');
+  var submitBtn=form.querySelector('button[type="submit"]');
   form.addEventListener('submit',function(ev){
     ev.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}
-    var g=function(id){return (document.getElementById(id).value||'').trim();};
-    var subject='Site assessment request — '+(g('company')||'New lead');
-    var lines=[
-      'Name: '+g('name'),
-      'Company: '+g('company'),
-      'Role: '+g('role'),
-      'Work email: '+g('email'),
-      'Phone: '+g('phone'),
-      'Site city: '+g('city'),
-      'People on-site: '+g('headcount'),
-      '',
-      'Notes:',
-      g('message')
-    ];
-    var href='mailto:hello@cachemarkets.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
-    window.location.href=href;
-    form.style.display='none';
-    ok.classList.add('show');
+    var original=submitBtn.textContent;
+    submitBtn.disabled=true;submitBtn.textContent='Sending…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(res){
+        if(res.ok){
+          form.style.display='none';
+          ok.classList.add('show');
+          form.reset();
+        } else {
+          res.json().then(function(d){
+            var msg=(d&&d.errors&&d.errors.map(function(e){return e.message;}).join(', '))||'Something went wrong.';
+            alert(msg+' Please try again, or email hello@cachemarkets.com.');
+          }).catch(function(){alert('Something went wrong. Please email hello@cachemarkets.com.');});
+          submitBtn.disabled=false;submitBtn.textContent=original;
+        }
+      })
+      .catch(function(){
+        alert('Network error. Please try again, or email hello@cachemarkets.com.');
+        submitBtn.disabled=false;submitBtn.textContent=original;
+      });
   });
 </script>
 </body>
