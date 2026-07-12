@@ -162,6 +162,28 @@
   .gtile .glabel{color:#fff;font-weight:700;font-size:1.02rem;text-shadow:0 1px 10px rgba(0,0,0,.5)}
   .gtile .gsub{color:rgba(255,255,255,.9);font-size:.82rem;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 
+  /* ---------- DIFFERENCE (micro-market vs vending) ---------- */
+  .compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-bottom:30px}
+  .compare-col{border-radius:16px;padding:26px;border:1px solid var(--line-light)}
+  .compare-col.cm{background:var(--pine);color:var(--cream);border-color:transparent}
+  .compare-col.vm{background:#fff}
+  .compare-col h3{font-size:1.22rem;margin-bottom:14px}
+  .compare-col.cm h3{color:#fff}
+  .compare-col ul{list-style:none}
+  .compare-col li{position:relative;padding-left:24px;margin-bottom:9px;font-size:.96rem}
+  .compare-col.cm li{color:var(--cream-soft)}
+  .compare-col.vm li{color:var(--ink-soft)}
+  .compare-col li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%}
+  .compare-col.cm li::before{background:var(--honey)}
+  .compare-col.vm li::before{background:#c9ccc6}
+  .articles-label{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--honey-deep);font-weight:600;margin-bottom:14px;text-align:center}
+  .article-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .article-card{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid var(--line-light);border-radius:12px;background:var(--oat);transition:transform .2s ease,box-shadow .2s ease}
+  .article-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(22,56,41,.5)}
+  .article-card .atitle{font-weight:600;font-size:1rem;color:var(--ink);display:flex;align-items:center;gap:6px}
+  .article-card .atitle svg{width:14px;height:14px;color:var(--honey-deep);flex:none}
+  .article-card .asrc{font-size:.83rem;color:var(--ink-soft)}
+
   /* ---------- CONTACT ---------- */
   .contact{background:var(--pine);color:var(--cream)}
   .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px}
@@ -477,6 +499,56 @@
       </div>
     </div>
     <p class="who-note reveal">From a warehouse floor to a student-housing lobby, Cache keeps people stocked around the clock.</p>
+  </div>
+</section>
+
+<!-- ============ MICRO-MARKET VS VENDING ============ -->
+<section class="section" id="difference">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Not your old vending machine</span>
+      <h2>Micro-market vs. vending machine.</h2>
+      <p>A micro-market is an open, grab-and-go store &mdash; real shelves, glass-front coolers, fresh food, and tap-to-pay self-checkout. A vending machine is a locked box with a few dozen packaged snacks. Same break room, a completely different experience.</p>
+    </div>
+    <div class="compare reveal">
+      <div class="compare-col cm">
+        <h3>Micro-market &mdash; grab &amp; go</h3>
+        <ul>
+          <li>Open shelves and coolers you walk right up to</li>
+          <li>150&ndash;400+ items: fresh meals, drinks, snacks &amp; coffee</li>
+          <li>Handle products, read labels, grab several at once</li>
+          <li>Fast tap-to-pay self-checkout</li>
+          <li>Shoppers spend more per visit</li>
+        </ul>
+      </div>
+      <div class="compare-col vm">
+        <h3>Traditional vending</h3>
+        <ul>
+          <li>A locked box &mdash; no touching before you buy</li>
+          <li>~40 packaged, shelf-stable items</li>
+          <li>One item at a time; jams and dead rows</li>
+          <li>Coin or card slot</li>
+          <li>Limited selection, lower spend</li>
+        </ul>
+      </div>
+    </div>
+    <div class="articles reveal">
+      <span class="articles-label">Read more on the difference</span>
+      <div class="article-cards">
+        <a class="article-card" href="https://blog.vendinggroup.com/what-is-a-micro-market-understanding-the-vending-options" target="_blank" rel="noopener noreferrer">
+          <span class="atitle">What is a micro-market? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="asrc">Vending Group — cites NAMA</span>
+        </a>
+        <a class="article-card" href="https://vmfsusa.com/blogs/business/micro-markets-vs-vending-machines" target="_blank" rel="noopener noreferrer">
+          <span class="atitle">Micro-markets vs. vending <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="asrc">VMFS — 2026 operator guide</span>
+        </a>
+        <a class="article-card" href="https://seaga.com/decoding-the-snack-scene-when-to-opt-for-micro-markets-vending-or-a-hybrid-setup/" target="_blank" rel="noopener noreferrer">
+          <span class="atitle">Micro-market, vending, or hybrid? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="asrc">Seaga — pros, cons &amp; costs</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
