@@ -421,6 +421,75 @@ fieldset{border:0;padding:0;margin:0}
  .m-cta .btn{flex:1;box-shadow:0 12px 30px -8px rgba(0,0,0,.45)}
  footer{padding-bottom:96px}
 }
+/* ===== scroll story (empty corner to micro market) ===== */
+.sd-story{position:relative;height:300vh;background:var(--pine-2)}
+.sd-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#d9d4cc}
+.sd-layer{position:absolute;inset:0}
+.sd-layer picture{display:block;width:100%;height:100%}
+.sd-layer img{width:100%;height:100%}
+.sd-layer img{object-fit:cover;object-position:var(--px,50%) 50%;user-select:none;-webkit-user-drag:none}
+.sd-after{clip-path:inset(0 100% 0 0);-webkit-clip-path:inset(0 100% 0 0);will-change:clip-path}
+.sd-before img{filter:saturate(.82) brightness(.97)}
+.sd-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(15,42,30,.45) 0%,rgba(15,42,30,.15) 30%,rgba(15,42,30,0) 50%),linear-gradient(0deg,rgba(15,42,30,.38) 0%,rgba(15,42,30,0) 26%)}
+.sd-wipe{position:absolute;top:0;bottom:0;left:0;width:0;z-index:3;pointer-events:none;will-change:transform;opacity:0;transition:opacity .25s ease}
+.sd-wipe .sd-bar{position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:linear-gradient(180deg,rgba(255,236,200,0),#FFE9C2 12%,#fff 50%,#FFE9C2 88%,rgba(255,236,200,0));box-shadow:0 0 12px 3px rgba(255,214,150,.85),0 0 46px 12px rgba(224,151,46,.45)}
+.sd-wipe .sd-haze{position:absolute;top:0;bottom:0;left:-70px;width:70px;background:linear-gradient(90deg,rgba(255,226,180,0),rgba(255,226,180,.22))}
+.sd-spark{position:absolute;left:-4px;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(255,220,160,.95);opacity:0;animation:sdtwinkle 1.6s ease-in-out infinite}
+.sd-spark.s{width:5px;height:5px;left:-2.5px}
+@keyframes sdtwinkle{0%,100%{opacity:0;transform:translate(0,0) scale(.4)}40%{opacity:1;transform:translate(-6px,-4px) scale(1)}70%{opacity:.5;transform:translate(-14px,-10px) scale(.6)}}
+.sd-copy{position:absolute;z-index:4;left:0;right:0;bottom:0;top:68px;display:flex;align-items:center;pointer-events:none}
+.sd-copy .wrap{width:100%}
+.sd-beats{position:relative;max-width:540px;min-height:300px}
+.sd-beat{position:absolute;left:0;top:0;right:0;opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;background:rgba(15,42,30,.62);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid var(--line-d);border-radius:22px;padding:26px 30px 28px;box-shadow:0 24px 50px -24px rgba(0,0,0,.55)}
+.sd-beat.on{opacity:1;transform:none}
+.sd-beat .sd-num{font:700 .78rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--honey)}
+.sd-beat h2{color:#fff;font-size:clamp(2.4rem,5vw,4.3rem);margin:12px 0 12px;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.sd-beat h2 em{font-style:italic;color:var(--honey);font-weight:400}
+.sd-beat p{color:var(--cream);font-size:1.12rem;max-width:440px;margin:0;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.sd-prog{position:absolute;z-index:4;right:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}
+.sd-prog i{display:block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .3s,transform .3s}
+.sd-prog i.on{background:var(--honey);transform:scale(1.35)}
+.sd-hint{position:absolute;z-index:4;left:50%;bottom:34px;transform:translateX(-50%);color:var(--cream);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;transition:opacity .3s}
+.sd-hint span{width:22px;height:34px;border:2px solid rgba(255,255,255,.7);border-radius:12px;position:relative}
+.sd-hint span::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:var(--honey);animation:sdwheel 1.6s ease-in-out infinite}
+@keyframes sdwheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.sd-counter{position:absolute;z-index:4;right:64px;bottom:40px;background:rgba(251,248,241,.94);color:var(--ink);border-radius:16px;padding:14px 18px 12px;box-shadow:0 18px 40px -14px rgba(0,0,0,.5);min-width:220px;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+.sd-counter.on{opacity:1;transform:none}
+.sd-counter .k{font:700 .7rem/1.2 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.sd-counter .v{font-family:var(--display);font-size:2.3rem;line-height:1.1;color:var(--pine);font-variant-numeric:tabular-nums}
+.sd-counter .disc{display:inline-block;margin-top:4px;font:700 .68rem/1.2 var(--body);color:#8a4b00;background:var(--honey-soft);padding:4px 8px;border-radius:6px}
+.sd-illus{position:absolute;z-index:4;left:16px;bottom:14px;font:700 .66rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:rgba(15,42,30,.66);border:1px solid var(--line-d);padding:5px 9px;border-radius:999px;pointer-events:none}
+.sd-static{display:none;background:var(--cream);padding:96px 0}
+.sd-static h2{color:var(--pine);font-size:clamp(2.2rem,4.4vw,3.6rem);margin-top:14px}
+.sd-static h2 em{font-style:italic;color:var(--honey-deep);font-weight:400}
+.sd-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 34px}
+.sd-pair figure{position:relative;margin:0;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.sd-pair picture{display:block}
+.sd-pair img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.sd-pair figcaption{padding:12px 16px;font-weight:700;font-size:.95rem}
+.sd-pair .sd-illus{top:12px;bottom:auto;left:12px}
+.sd-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sd-steps li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:700}
+.sd-steps li small{display:block;color:var(--honey-deep);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+@media (max-width:900px){
+ .sd-copy{align-items:flex-start;padding-top:9vh}
+ .sd-shade{background:linear-gradient(180deg,rgba(15,42,30,.45) 0%,rgba(15,42,30,0) 40%)}
+ .sd-beats{min-height:240px}
+ .sd-beat{padding:18px 20px 20px;border-radius:18px}
+ .sd-beat h2{font-size:2.3rem}
+ .sd-beat p{font-size:1rem}
+ .sd-prog{right:14px}
+ .sd-hint{bottom:110px}
+ .sd-counter{right:16px;left:auto;bottom:96px;min-width:0;padding:10px 14px 9px}
+ .sd-counter .v{font-size:1.7rem}
+ .sd-illus{top:80px;bottom:auto;left:auto;right:14px}
+ .sd-pair{grid-template-columns:1fr}
+ .sd-steps{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+ .sd-story{display:none}
+ .sd-static{display:block}
+}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -475,6 +544,69 @@ fieldset{border:0;padding:0;margin:0}
       <span class="chip c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3.5 2"/></svg>Open 24/7</span>
       <span class="chip c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="currentColor" fill-opacity=".14" stroke="none"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>$0 to the property</span>
     </div>
+  </div>
+</section>
+
+<section class="sd-story" id="story" aria-label="Scroll to see an empty corner become a micro market">
+  <div class="sd-stage">
+    <div class="sd-layer sd-before"><picture><source srcset="/images/scroll-before.webp" type="image/webp"><img src="/images/scroll-before.jpg" alt="Illustration: an empty corner of a modern apartment lobby with a bare wall and wood floor" width="1280" height="720" loading="lazy" decoding="async"></picture></div>
+    <div class="sd-layer sd-after" id="sdAfter"><picture><source srcset="/images/scroll-after.webp" type="image/webp"><img src="/images/scroll-after.jpg" alt="Illustration: the same lobby corner with glass-door coolers, stocked open shelving and a self-checkout kiosk" width="1280" height="720" loading="lazy" decoding="async"></picture></div>
+    <div class="sd-wipe" id="sdWipe" aria-hidden="true"><div class="sd-haze"></div><div class="sd-bar"></div></div>
+    <div class="sd-shade" aria-hidden="true"></div>
+    <span class="sd-illus">Illustration</span>
+
+    <div class="sd-copy">
+      <div class="wrap">
+        <div class="sd-beats">
+          <div class="sd-beat on" data-beat="0">
+            <span class="sd-num">01 / 04</span>
+            <h2>An <em>empty</em> corner.</h2>
+            <p>Most lobbies and amenity rooms have one. A bare wall that does nothing for residents.</p>
+          </div>
+          <div class="sd-beat" data-beat="1">
+            <span class="sd-num">02 / 04</span>
+            <h2>We install it, <em>free</em>.</h2>
+            <p>Coolers, shelving and a self-checkout kiosk. No cost to the property.</p>
+          </div>
+          <div class="sd-beat" data-beat="2">
+            <span class="sd-num">03 / 04</span>
+            <h2>We stock and <em>service</em> it.</h2>
+            <p>Hands-off for you. Talk to us about how it works.</p>
+          </div>
+          <div class="sd-beat" data-beat="3">
+            <span class="sd-num">04 / 04</span>
+            <h2>Residents get a <em>24/7</em> market.</h2>
+            <p>Drinks, snacks and fresh food steps from their door, any hour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sd-prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="sd-hint" id="sdHint" aria-hidden="true"><span></span>Scroll</div>
+
+    <div class="sd-counter" id="sdCounter" role="note" aria-label="Example only, not real data">
+      <div class="k">Example: items sold today</div>
+      <div class="v" id="sdCount">0</div>
+      <span class="disc">Example only, not real data</span>
+    </div>
+  </div>
+</section>
+
+<section class="sd-static" aria-label="Before and after">
+  <div class="wrap">
+    <span class="eyebrow">See it happen</span>
+    <h2>From an empty corner to a <em>24/7 market</em>.</h2>
+    <div class="sd-pair">
+      <figure><picture><source srcset="/images/scroll-before.webp" type="image/webp"><img src="/images/scroll-before.jpg" alt="Illustration: an empty corner of a modern apartment lobby" width="1280" height="720" loading="lazy"></picture><span class="sd-illus">Illustration</span><figcaption>Before: an empty corner</figcaption></figure>
+      <figure><picture><source srcset="/images/scroll-after.webp" type="image/webp"><img src="/images/scroll-after.jpg" alt="Illustration: the same corner with a self-serve micro market installed" width="1280" height="720" loading="lazy"></picture><span class="sd-illus">Illustration</span><figcaption>After: a self-serve micro market</figcaption></figure>
+    </div>
+    <ol class="sd-steps">
+      <li><small>01</small>An empty corner</li>
+      <li><small>02</small>We install it, free</li>
+      <li><small>03</small>We stock and service it</li>
+      <li><small>04</small>Residents get a 24/7 market</li>
+    </ol>
   </div>
 </section>
 
@@ -804,6 +936,40 @@ fieldset{border:0;padding:0;margin:0}
       })
       .catch(function(){alert('Network error. Please try again, or email hello@cachemarkets.com.');btn.disabled=false;btn.innerHTML=orig;});
   });
+})();
+</script>
+<script>
+(function(){
+  var story=document.getElementById('story');
+  if(!story) return;
+  var after=document.getElementById('sdAfter'),wipe=document.getElementById('sdWipe'),hint=document.getElementById('sdHint'),counter=document.getElementById('sdCounter'),countv=document.getElementById('sdCount');
+  var beats=story.querySelectorAll('.sd-beat'),dots=story.querySelectorAll('.sd-prog i'),stage=story.querySelector('.sd-stage');
+  for(var i=0;i<16;i++){var s=document.createElement('i');s.className='sd-spark'+(i%2?' s':'');s.style.top=(4+Math.random()*92).toFixed(1)+'%';s.style.animationDelay=(Math.random()*1.6).toFixed(2)+'s';s.style.animationDuration=(1.2+Math.random()*1.0).toFixed(2)+'s';wipe.appendChild(s);}
+  var WIPE_START=0.14,WIPE_END=0.86,BEATS=[0,0.22,0.52,0.78],EXAMPLE_MAX=36; // illustrative only, labeled "Example only, not real data"
+  var portrait=window.matchMedia('(max-aspect-ratio: 1/1)');
+  var ticking=false,lastBeat=-1,vw=window.innerWidth;
+  function clamp(v){return v<0?0:v>1?1:v;}
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+  function progress(){var r=story.getBoundingClientRect(),total=story.offsetHeight-window.innerHeight;return total>0?clamp(-r.top/total):0;}
+  function render(){
+    ticking=false;
+    var p=progress(),w=ease(clamp((p-WIPE_START)/(WIPE_END-WIPE_START)));
+    stage.style.setProperty('--px',portrait.matches?(22+56*ease(p)).toFixed(2)+'%':'50%');
+    var clip='inset(0 '+(100-w*100).toFixed(2)+'% 0 0)';
+    after.style.clipPath=clip;after.style.webkitClipPath=clip;
+    wipe.style.transform='translate3d('+(w*vw).toFixed(1)+'px,0,0)';
+    wipe.style.opacity=(w>0.002&&w<0.998)?1:0;
+    var b=0;for(var k=BEATS.length-1;k>=0;k--){if(p>=BEATS[k]){b=k;break;}}
+    if(b!==lastBeat){for(var j=0;j<beats.length;j++){beats[j].classList.toggle('on',j===b);dots[j].classList.toggle('on',j===b);}lastBeat=b;}
+    hint.style.opacity=p<0.04?1:0;
+    var c=clamp((p-0.52)/0.4);
+    counter.classList.toggle('on',p>=0.52);
+    countv.textContent=Math.round(ease(c)*EXAMPLE_MAX);
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(render);}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',function(){vw=window.innerWidth;onScroll();});
+  render();
 })();
 </script>
 </body>
